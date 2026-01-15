@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Acqua Marina – Baia Verde (4 posti)</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbarinner">
+      <div class="brand">
+        <div>
+          <div class="brandname">Estate A Gallipoli</div>
+          <div class="brandtagline">Case e ville selezionate</div>
+        </div>
+      </div>
+      <a id="waHero" class="btn btn--secondary" href="#">Contattaci su WhatsApp</a>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <div class="sectionhead">
+        <h2>Acqua Marina</h2>
+        <p>📍 Baia Verde · 👥 4 ospiti · 🏖️ Vicino spiaggia</p>
+      </div>
+
+      <article class="card">
+        <img src="../img/acqua-marina/7.jpg" alt="Acqua Marina – Baia Verde" />
+        <div class="cardbody">
+          <h3>Acqua Marina – Baia Verde</h3>
+          <ul class="meta">
+            <li>📍 Baia Verde</li>
+            <li>👥 4 ospiti</li>
+            <li>🏖️ Vicino spiaggia</li>
+          </ul>
+
+          <div class="cardfoot" style="justify-content:flex-start; gap:12px;">
+            <a class="btn btn--primary" href="../pdf/ACQUA-MARINA.pdf" target="_blank" rel="noopener">
+              📄 Visualizza scheda completa
+            </a>
+            <a class="btn btn--ghost" id="waHouse" href="#">
+              💬 Chiedi disponibilità
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <div style="margin-top:18px;">
+        <a class="link-inline" href="../index.html#case">← Torna alle case</a>
+      </div>
+    </div>
+  </main>
+
+  <script src="../script.js"></script>
+  <script>
+    const msg = "Ciao! Vorrei disponibilità per Acqua Marina (Baia Verde) – 4 ospiti.\n\nDate: ___ / ___.\nNumero ospiti: ___.";
+    const wa = document.getElementById("waHouse");
+    if (wa && window.buildWhatsAppLink) wa.href = window.buildWhatsAppLink(msg);
+  </script>
+</body>
+</html>

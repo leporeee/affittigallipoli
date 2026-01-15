@@ -1,223 +1,275 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Vacanze in Salento – Prenota diretto</title>
-  <meta name="description" content="Ville, trulli e case vacanza selezionate in Salento. Prenotazione diretta via WhatsApp, assistenza personale." />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Case Vacanza in Salento | Prenota su WhatsApp</title>
+  <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles.css" />
-  <meta property="og:title" content="Vacanze in Salento – Prenota diretto" />
-  <meta property="og:description" content="Ricevi proposte disponibili per le tue date in pochi minuti. Nessuna commissione OTA." />
-  <meta property="og:type" content="website" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="topbar">
-    <div class="container topbar__inner">
-      <div class="brand">
-        <div class="brand__logo" aria-hidden="true">S</div>
-        <div class="brand__text">
-          <div class="brand__name">Salento Stay</div>
-          <div class="brand__tagline">Prenotazione diretta</div>
-        </div>
-      </div>
-      <a class="btn btn--ghost" href="#richiesta">Richiedi disponibilità</a>
-    </div>
-  </header>
 
-  <main>
-    <!-- HERO -->
-    <section class="hero" id="home">
-      <div class="container hero__grid">
-        <div class="hero__copy">
-          <p class="pill">🌊 Estate in Puglia • Selezione Salento</p>
-          <h1>Ville, trulli e case vacanza selezionate in Salento</h1>
-          <p class="lead">
-            Prenota direttamente la tua vacanza ideale. Nessuna commissione nascosta:
-            ricevi proposte disponibili per le tue date via WhatsApp.
-          </p>
-          <div class="hero__cta">
-            <a class="btn btn--primary" id="waHero" href="#" rel="nofollow">Richiedi disponibilità su WhatsApp</a>
-            <a class="btn btn--secondary" href="#strutture">Vedi strutture</a>
-          </div>
-          <div class="hero__trust">
-            <div class="trust__item"><strong>✔</strong> Strutture verificate</div>
-            <div class="trust__item"><strong>✔</strong> Assistenza personale</div>
-            <div class="trust__item"><strong>✔</strong> Prenotazione diretta</div>
-          </div>
-        </div>
-
-        <div class="hero__media">
-          <!-- Sostituisci il file con una tua immagine: ./assets/hero.jpg -->
-          <img src="./assets/hero.jpg" alt="Mare del Salento" loading="eager" />
-          <div class="media__badge">
-            <div class="badge__big">Risposta rapida</div>
-            <div class="badge__small">Proposte in pochi minuti</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- STRUTTURE -->
-    <section class="section" id="strutture">
-      <div class="container">
-        <div class="section__head">
-          <h2>Le nostre strutture</h2>
-          <p>Una selezione di esempi: personalizziamo le proposte in base alle tue date e al tuo budget.</p>
-        </div>
-
-        <div class="cards">
-          <article class="card">
-            <img src="./assets/villa-otranto.jpg" alt="Villa Blue – Otranto" loading="lazy" />
-            <div class="card__body">
-              <h3>Villa Blue – Otranto</h3>
-              <ul class="meta">
-                <li>👥 6 ospiti</li>
-                <li>🏊 Piscina privata</li>
-                <li>📍 Vista mare</li>
-              </ul>
-              <div class="card__foot">
-                <div class="price">Da <strong>180€</strong>/notte</div>
-                <a class="link" href="#richiesta">Verifica disponibilità →</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="card">
-            <img src="./assets/trullo.jpg" alt="Trullo Sole – Valle d’Itria" loading="lazy" />
-            <div class="card__body">
-              <h3>Trullo Sole – Valle d’Itria</h3>
-              <ul class="meta">
-                <li>👥 4 ospiti</li>
-                <li>🏊 Piscina</li>
-                <li>📍 Campagna</li>
-              </ul>
-              <div class="card__foot">
-                <div class="price">Da <strong>150€</strong>/notte</div>
-                <a class="link" href="#richiesta">Verifica disponibilità →</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="card">
-            <img src="./assets/gallipoli.jpg" alt="Casa Mare – Gallipoli" loading="lazy" />
-            <div class="card__body">
-              <h3>Casa Mare – Gallipoli</h3>
-              <ul class="meta">
-                <li>👥 5 ospiti</li>
-                <li>🌅 Fronte mare</li>
-                <li>📍 Centro</li>
-              </ul>
-              <div class="card__foot">
-                <div class="price">Da <strong>130€</strong>/notte</div>
-                <a class="link" href="#richiesta">Verifica disponibilità →</a>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- RECENSIONI -->
-    <section class="section section--alt" id="recensioni">
-      <div class="container">
-        <div class="section__head">
-          <h2>Cosa dicono i nostri ospiti</h2>
-          <p>Piccole recensioni esempio (sostituiscile con le tue reali).</p>
-        </div>
-        <div class="quotes">
-          <figure class="quote">
-            <blockquote>“Organizzazione impeccabile e villa stupenda. Torneremo sicuramente.”</blockquote>
-            <figcaption>— Marco R.</figcaption>
-          </figure>
-          <figure class="quote">
-            <blockquote>“Prenotazione semplice e assistenza continua. Consigliatissimo.”</blockquote>
-            <figcaption>— Chiara L.</figcaption>
-          </figure>
-          <figure class="quote">
-            <blockquote>“Vacanza perfetta, esattamente come nelle foto.”</blockquote>
-            <figcaption>— Davide P.</figcaption>
-          </figure>
-        </div>
-        <p class="note">Oltre <strong>300 ospiti soddisfatti</strong> ogni stagione.</p>
-      </div>
-    </section>
-
-    <!-- MODULO -->
-    <section class="section" id="richiesta">
-      <div class="container form__grid">
-        <div>
-          <h2>Richiedi la tua proposta personalizzata</h2>
-          <p class="lead">
-            Compila in 20 secondi: ti inviamo su WhatsApp le migliori soluzioni disponibili per le tue date.
-          </p>
-
-          <div class="bullets">
-            <div class="bullet"><span>✔</span> Prenotazione diretta</div>
-            <div class="bullet"><span>✔</span> Nessuna commissione nascosta</div>
-            <div class="bullet"><span>✔</span> Assistenza prima e durante il soggiorno</div>
-          </div>
-        </div>
-
-        <form class="form" id="requestForm">
-          <label>
-            Data di arrivo
-            <input type="date" name="checkin" required />
-          </label>
-          <label>
-            Data di partenza
-            <input type="date" name="checkout" required />
-          </label>
-          <label>
-            Numero di ospiti
-            <input type="number" name="guests" min="1" placeholder="Es. 4" required />
-          </label>
-          <label>
-            Budget indicativo
-            <input type="text" name="budget" placeholder="Es. 1.200€ totale / 200€ a notte" />
-          </label>
-          <label>
-            Note (facoltative)
-            <textarea name="notes" rows="3" placeholder="Piscina? Mare? Animali? Zona preferita?"></textarea>
-          </label>
-
-          <button class="btn btn--primary btn--full" type="submit">Ricevi le proposte su WhatsApp</button>
-          <p class="fineprint">
-            Cliccando, apri WhatsApp con un messaggio precompilato. Nessuno spam.
-          </p>
-        </form>
-      </div>
-    </section>
-
-    <!-- FOOTER CTA -->
-    <section class="section section--cta">
-      <div class="container cta">
-        <div class="cta__copy">
-          <h2>La tua vacanza in Salento inizia da qui</h2>
-          <p>Ricevi le migliori proposte disponibili in meno di 10 minuti.</p>
-        </div>
-        <a class="btn btn--secondary" id="waFooter" href="#" rel="nofollow">Scrivici su WhatsApp</a>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container footer__inner">
+<header class="topbar">
+  <div class="container topbar__inner">
+    <div class="brand">
       <div>
-        <strong>Salento Stay</strong><br />
-        <span class="muted">© <span id="year"></span> • Prenotazioni dirette</span>
-      </div>
-      <div class="footer__links">
-        <a href="#home">Home</a>
-        <a href="#strutture">Strutture</a>
-        <a href="#recensioni">Recensioni</a>
-        <a href="#richiesta">Richiesta</a>
+        <div class="brand__name">Estate A Gallipoli</div>
+        <div class="brand__tagline">Case e ville selezionate</div>
       </div>
     </div>
-  </footer>
+    <a id="waHero" class="btn btn--secondary">Contattaci su WhatsApp</a>
+  </div>
+</header>
 
-  <script src="./script.js"></script>
+<section class="hero">
+  <div class="container hero__grid">
+    <div>
+      <span class="pill">Affitti estivi diretti</span>
+      <h1>Case vacanza selezionate a Gallipoli e nel Salento</h1>
+      <p class="lead">Contatto diretto, senza commissioni. Dimmi quando arrivi e troviamo la soluzione giusta.</p>
+      <div class="hero__cta">
+        <a class="btn btn--primary" href="#form">Verifica disponibilità</a>
+        <a class="btn btn--ghost" href="#case">Vedi le case</a>
+      </div>
+      <div class="hero__trust">
+        <span class="trust__item">✔ Risposta rapida</span>
+        <span class="trust__item">✔ Assistenza reale</span>
+        <span class="trust__item">✔ Prenoti via WhatsApp</span>
+      </div>
+    </div>
+    <div class="hero__media">
+      <div class="hero-slider" aria-label="Galleria strutture">
+          <img class="hero-slide is-active" src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1400&q=80" alt="Interno elegante" loading="eager" />
+          <img class="hero-slide" src="https://images.unsplash.com/photo-1445019980597-93fa8acb246c?auto=format&fit=crop&w=1400&q=80" alt="Terrazza vista mare" loading="lazy" />
+          <img class="hero-slide" src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1400&q=80" alt="Camera luminosa" loading="lazy" />
+          <img class="hero-slide" src="https://images.unsplash.com/photo-1501183638710-841dd1904471?auto=format&fit=crop&w=1400&q=80" alt="Soggiorno moderno" loading="lazy" />
+          <img class="hero-slide" src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1400&q=80" alt="Dettagli di design" loading="lazy" />
+
+          <div class="media__badge">
+            <div class="badge__big">20+ strutture</div>
+            
+          </div>
+        </div>
+        </div></div>
+        
+      </div>
+        </div>
+    </div>
+  </div>
+</section>
+
+<section id="opzioni" class="section section--alt">
+  <div class="container">
+    <div class="section__head">
+      <h2>Quanti siete?</h2>
+      <p>Scegli la fascia posti: ti guidiamo verso le soluzioni più adatte prima di vedere tutte le case.</p>
+    </div>
+
+    <div class="options">
+      <button class="option-card" type="button" data-min="2" data-max="4" aria-pressed="false">
+        <div class="option-card__top">
+          <div class="option-card__icon">👫</div>
+          <div>
+            <div class="option-card__title">2–4 posti</div>
+            <div class="option-card__sub">Coppie & piccoli gruppi</div>
+          </div>
+        </div>
+        <div class="option-card__desc">Monolocali, bilocali e appartamenti comodi vicino al mare o al centro.</div>
+      </button>
+
+      <button class="option-card" type="button" data-min="4" data-max="8" aria-pressed="false">
+        <div class="option-card__top">
+          <div class="option-card__icon">👨‍👩‍👧‍👦</div>
+          <div>
+            <div class="option-card__title">4–8 posti</div>
+            <div class="option-card__sub">Famiglie & amici</div>
+          </div>
+        </div>
+        <div class="option-card__desc">Case indipendenti e appartamenti grandi: più camere, più spazio, più comfort.</div>
+      </button>
+
+      <button class="option-card" type="button" data-min="8" data-max="12" aria-pressed="false">
+        <div class="option-card__top">
+          <div class="option-card__icon">🏡</div>
+          <div>
+            <div class="option-card__title">8–12 posti</div>
+            <div class="option-card__sub">Ville & villette</div>
+          </div>
+        </div>
+        <div class="option-card__desc">Ideali per gruppi: spazi esterni, più bagni e privacy tra camere.</div>
+      </button>
+
+      <button class="option-card" type="button" data-min="12" data-max="99" aria-pressed="false">
+        <div class="option-card__top">
+          <div class="option-card__icon">✨</div>
+          <div>
+            <div class="option-card__title">12+ posti</div>
+            <div class="option-card__sub">Gruppi grandi</div>
+          </div>
+        </div>
+        <div class="option-card__desc">Soluzioni su richiesta: più unità vicine o proprietà grandi per comitive.</div>
+      </button>
+    </div>
+
+    <p class="note">Non trovi la fascia perfetta? <a class="link-inline" href="#form">Scrivici le date</a> e ti proponiamo noi le migliori opzioni disponibili.</p>
+  </div>
+</section>
+
+<section id="case" class="section section--alt">
+  <div class="container">
+    <div class="section__head">
+      <h2>Le nostre case</h2>
+      <p>Selezione di alloggi ideali per vacanze estive</p>
+    </div>
+
+    <div class="filterbar" id="filterbar" aria-live="polite">
+      <div class="filterbar__left">
+        <div class="filterbar__title">Case consigliate</div>
+        <div class="filterbar__meta" id="resultsMeta">Seleziona una fascia posti per vedere le case adatte.</div>
+      </div>
+      <div class="filterbar__right">
+        <button class="btn btn--ghost" type="button" id="btnShowAll" hidden>Mostra tutte</button>
+      </div>
+    </div>
+
+    <div class="cards" id="propertyGrid">
+      <article class="property-card" data-capacity="2">
+        <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1600&q=80" alt="Monolocale Baia Verde" />
+        <div class="cardbody">
+          <h3>Monolocale Baia Verde</h3>
+          <ul class="meta"><li>📍 Baia Verde</li><li>👥 2 ospiti</li><li>🏖️ Vicino spiaggia</li></ul>
+          <div class="cardfoot"><a class="link" href="#form">Richiedi info</a></div>
+        </div>
+      </article>
+
+      <article class="property-card" data-capacity="4">
+        <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=1600&q=80" alt="Appartamento a Gallipoli" />
+        <div class="cardbody">
+          <h3>Appartamento centrale Gallipoli</h3>
+          <ul class="meta"><li>📍 Gallipoli</li><li>👥 4 ospiti</li><li>🧭 Centro</li></ul>
+          <div class="cardfoot"><a class="link" href="#form">Richiedi info</a></div>
+        </div>
+      </article>
+
+      <article class="property-card" data-capacity="6">
+        <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=1600&q=80" alt="Casa con giardino Gallipoli" />
+        <div class="cardbody">
+          <h3>Casa con giardino (zona Gallipoli)</h3>
+          <ul class="meta"><li>📍 Gallipoli</li><li>👥 6 ospiti</li><li>🌿 Spazi esterni</li></ul>
+          <div class="cardfoot"><a class="link" href="#form">Richiedi info</a></div>
+        </div>
+      </article>
+
+      <article class="property-card" data-capacity="8">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80" alt="Villa Baia Verde" />
+        <div class="cardbody">
+          <h3>Villa Baia Verde – 8 posti</h3>
+          <ul class="meta"><li>📍 Baia Verde</li><li>👥 8 ospiti</li><li>✨ Comfort</li></ul>
+          <div class="cardfoot"><a class="link" href="#form">Richiedi info</a></div>
+        </div>
+      </article>
+
+      <article class="property-card" data-capacity="10">
+        <img src="https://images.unsplash.com/photo-1501183638710-841dd1904471?auto=format&fit=crop&w=1600&q=80" alt="Villa grande Gallipoli" />
+        <div class="cardbody">
+          <h3>Villa grande – Gallipoli (10 posti)</h3>
+          <ul class="meta"><li>📍 Gallipoli</li><li>👥 10 ospiti</li><li>🛁 Più bagni</li></ul>
+          <div class="cardfoot"><a class="link" href="#form">Richiedi info</a></div>
+        </div>
+      </article>
+
+      <article class="property-card" data-capacity="3">
+        <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1600&q=80" alt="Trilocale Baia Verde" />
+        <div class="cardbody">
+          <h3>Trilocale Baia Verde</h3>
+          <ul class="meta"><li>📍 Baia Verde</li><li>👥 3 ospiti</li><li>🌅 Balcone</li></ul>
+          <div class="cardfoot"><a class="link" href="#form">Richiedi info</a></div>
+        </div>
+      </article>
+
+      <article class="property-card" data-capacity="5">
+        <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1600&q=80" alt="Appartamento Gallipoli 5 posti" />
+        <div class="cardbody">
+          <h3>Appartamento – Gallipoli (5 posti)</h3>
+          <ul class="meta"><li>📍 Gallipoli</li><li>👥 5 ospiti</li><li>❄️ Aria cond.</li></ul>
+          <div class="cardfoot"><a class="link" href="#form">Richiedi info</a></div>
+        </div>
+      </article>
+
+      <article class="property-card" data-capacity="7">
+        <img src="https://images.unsplash.com/photo-1445019980597-93fa8acb246c?auto=format&fit=crop&w=1600&q=80" alt="Villa Baia Verde 7 posti" />
+        <div class="cardbody">
+          <h3>Villa Baia Verde (7 posti)</h3>
+          <ul class="meta"><li>📍 Baia Verde</li><li>👥 7 ospiti</li><li>🌇 Terrazza</li></ul>
+          <div class="cardfoot"><a class="link" href="#form">Richiedi info</a></div>
+        </div>
+      </article>
+
+      <article class="property-card" data-capacity="12">
+        <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=1600&q=80" alt="Villa per comitive Gallipoli" />
+        <div class="cardbody">
+          <h3>Villa per comitive – Gallipoli (12 posti)</h3>
+          <ul class="meta"><li>📍 Gallipoli</li><li>👥 12 ospiti</li><li>🧑‍🤝‍🧑 Comitiva</li></ul>
+          <div class="cardfoot"><a class="link" href="#form">Richiedi info</a></div>
+        </div>
+      </article>
+
+      <article class="property-card" data-capacity="4">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80" alt="Appartamento Baia Verde 4 posti" />
+        <div class="cardbody">
+          <h3>Appartamento Baia Verde (4 posti)</h3>
+          <ul class="meta"><li>📍 Baia Verde</li><li>👥 4 ospiti</li><li>🅿️ Parcheggio</li></ul>
+          <div class="cardfoot"><a class="link" href="#form">Richiedi info</a></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="form" class="section">
+  <div class="container form__grid">
+    <div>
+      <h2>Richiedi disponibilità</h2>
+      <div class="bullets">
+        <div class="bullet"><span>✔</span> Nessuna prenotazione online</div>
+        <div class="bullet"><span>✔</span> Risposta rapida su WhatsApp</div>
+        <div class="bullet"><span>✔</span> Offerta personalizzata</div>
+      </div>
+    </div>
+
+    <form class="form" id="requestForm">
+      <label>Check-in
+        <input type="date" name="checkin" required>
+      </label>
+      <label>Check-out
+        <input type="date" name="checkout" required>
+      </label>
+      <label>Numero ospiti
+        <input type="number" name="guests" required>
+      </label>
+      <label>Budget indicativo
+        <input type="text" name="budget">
+      </label>
+      <label>Note
+        <textarea name="notes"></textarea>
+      </label>
+      <button class="btn btn--primary btn--full">Invia su WhatsApp</button>
+      <p class="fineprint">Riceverai risposta diretta senza intermediari</p>
+    </form>
+  </div>
+</section>
+<footer class="footer">
+  <div class="container footer__inner">
+    <span class="muted">© <span id="year"></span> Salento Stay</span>
+    <div class="footer__links">
+      <a href="#">Privacy</a>
+      <a href="#">Contatti</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>

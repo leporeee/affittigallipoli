@@ -14,6 +14,22 @@ function formatDate(d) {
 }
 
 function init() {
+  // --- Hero slider (loop) ---
+  const heroSlides = Array.from(document.querySelectorAll(".hero-slide"));
+  let heroSlideIndex = 0;
+
+  function showHeroSlide(i){
+    heroSlides.forEach((s, idx) => s.classList.toggle("is-active", idx === i));
+  }
+
+  if(heroSlides.length > 1){
+    showHeroSlide(0);
+    setInterval(() => {
+      heroSlideIndex = (heroSlideIndex + 1) % heroSlides.length;
+      showHeroSlide(heroSlideIndex);
+    }, 5200);
+  }
+
   document.getElementById("year").textContent = new Date().getFullYear();
 
   const defaultMsg = "Ciao! Vorrei ricevere disponibilità per una casa/villa in Salento.";
@@ -21,7 +37,7 @@ function init() {
   const waFooter = document.getElementById("waFooter");
 
   waHero.href = buildWhatsAppLink(defaultMsg);
-  waFooter.href = buildWhatsAppLink(defaultMsg);
+  if (waFooter) if (waFooter) if (waFooter) if (waFooter) waFooter.href = buildWhatsAppLink(defaultMsg);
 
   const form = document.getElementById("requestForm");
   form.addEventListener("submit", (e) => {
@@ -44,5 +60,21 @@ function init() {
     window.location.href = buildWhatsAppLink(msg);
   });
 }
-
 document.addEventListener("DOMContentLoaded", init);
+const observer = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("in");
+      }
+    });
+  },
+  { threshold: 0.15 }
+);
+
+document.querySelectorAll(
+  ".hero__grid, .section__head, .card, .quote, .form, .cta"
+).forEach(el => {
+  el.classList.add("reveal");
+  observer.observe(el);
+});

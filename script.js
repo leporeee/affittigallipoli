@@ -78,3 +78,6 @@ document.querySelectorAll(
   el.classList.add("reveal");
   observer.observe(el);
 });
+
+
+window.buildWhatsAppLink = buildWhatsAppLink;

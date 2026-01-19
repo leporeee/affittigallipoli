@@ -413,3 +413,198 @@ textarea{resize:vertical}
   .hero-slide{transition:none}
   .btn,.card,.option-card,.wa-fab{transition:none}
 }
+
+
+/* === PACK A UI === */
+:root{ --wa:#25D366; }
+
+/* Sticky WhatsApp button */
+.wa-fab{
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 9999;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: 999px;
+  background: rgba(37, 211, 102, .14);
+  border: 1px solid rgba(37, 211, 102, .35);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 24px 70px rgba(0,0,0,.45);
+  transition: transform .18s ease, background .18s ease;
+}
+.wa-fab:hover{ transform: translateY(-2px); background: rgba(37, 211, 102, .18); }
+.wa-fab__icon{
+  width: 34px; height: 34px;
+  display: grid; place-items: center;
+  border-radius: 999px;
+  background: rgba(37, 211, 102, .22);
+  border: 1px solid rgba(37, 211, 102, .35);
+}
+.wa-fab__text{ font-weight: 800; letter-spacing: .2px; }
+
+/* mobile: wide & comfy */
+@media (max-width: 520px){
+  .wa-fab{
+    left: 12px; right: 12px;
+    bottom: 12px;
+    justify-content: center;
+  }
+}
+
+/* Action bar in property pages */
+.action-bar{
+  margin: 14px 0 18px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+@media (max-width: 520px){
+  .action-bar .btn{ width: 100%; }
+}
+
+/* Meta chips */
+.meta li{
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.10);
+}
+
+/* Card media link */
+.card__mediaLink{ display:block; }
+
+/* Lightbox overlay */
+.lb{
+  position: fixed; inset: 0; z-index: 10000;
+  display: none; align-items: center; justify-content: center;
+  background: rgba(0,0,0,.72); backdrop-filter: blur(8px);
+}
+.lb.open{ display:flex; }
+.lb__inner{
+  width: min(1100px, 94vw);
+  height: min(78vh, 680px);
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.18);
+  box-shadow: 0 28px 90px rgba(0,0,0,.55);
+  position: relative;
+  background: rgba(10,12,18,.55);
+}
+.lb__img{ width:100%; height:100%; object-fit: contain; }
+.lb__x{
+  position:absolute; top:12px; right:12px;
+  width:44px; height:44px;
+  display:grid; place-items:center;
+  border-radius:14px;
+  background: rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.14);
+}
+.lb__nav{
+  position:absolute; top:50%;
+  transform: translateY(-50%);
+  width:44px; height:60px;
+  display:grid; place-items:center;
+  border-radius:16px;
+  background: rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.14);
+}
+.lb__prev{ left:12px; } .lb__next{ right:12px; }
+
+@media (prefers-reduced-motion: reduce){
+  *{ transition:none !important; animation:none !important; }
+}
+
+
+/* === WA SVG FIX === */
+/* Sticky WhatsApp: cerchio, solo icona, SVG premium */
+.wa-fab{
+  width: 58px;
+  height: 58px;
+  padding: 0 !important;
+  border-radius: 999px !important;
+  justify-content: center !important;
+  gap: 0 !important;
+}
+.wa-fab__text{ display:none !important; }
+.wa-fab__icon{
+  width: 46px;
+  height: 46px;
+  padding: 0;
+  background: rgba(37, 211, 102, .22);
+  border: 1px solid rgba(37, 211, 102, .35);
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+}
+.wa-fab__svg{
+  width: 24px;
+  height: 24px;
+  fill: rgba(233, 238, 251, 0.95);
+}
+
+/* mobile: resta cerchio, non pill largo */
+@media (max-width: 520px){
+  .wa-fab{
+    left: auto !important;
+    right: 18px !important;
+    bottom: 18px !important;
+  }
+}
+/* WhatsApp floating: desktop + mobile (smart) */
+.wa-fab{
+  display: inline-flex !important;
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition: opacity .18s ease, transform .18s ease;
+}
+.wa-fab.is-visible{
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+
+/* Mobile: sempre visibile */
+@media (max-width: 520px){
+  .wa-fab{
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+  }
+}
+
+
+
+/* === WA FAB PREMIUM LOGO === */
+/* Un solo cerchio pulito, logo perfetto */
+.wa-fab{
+  background: rgba(37,211,102,.95) !important;
+  border: none !important;
+  box-shadow: 0 22px 60px rgba(0,0,0,.45) !important;
+}
+.wa-fab:hover{
+  background: rgba(37,211,102,1) !important;
+  box-shadow: 0 28px 80px rgba(0,0,0,.55) !important;
+}
+.wa-fab__icon{
+  background: transparent !important;
+  border: none !important;
+  width: 100% !important;
+  height: 100% !important;
+  display: grid !important;
+  place-items: center !important;
+}
+.wa-fab__svg{
+  width: 26px !important;
+  height: 26px !important;
+  fill: #ffffff !important;
+  display: block !important;
+}
+
+/* Mobile: un filo più grande */
+@media (max-width: 520px){
+  .wa-fab__svg{ width: 28px !important; height: 28px !important; }
+}

@@ -669,3 +669,34 @@ textarea{resize:vertical}
     height: 28px;
   }
 }
+
+
+
+/* === FAB TEXT KILL (iOS) === */
+/* Qualsiasi testo dentro il FAB non deve MAI comparire */
+#waSticky, .wa-fab{
+  width: 56px !important;
+  height: 56px !important;
+  padding: 0 !important;
+  border-radius: 999px !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+  font-size: 0 !important; /* uccide testo “fantasma” */
+}
+#waSticky .wa-fab__text, .wa-fab .wa-fab__text{
+  display: none !important;
+  visibility: hidden !important;
+  position: absolute !important;
+  left: -9999px !important;
+}
+
+/* rimette dimensione al logo */
+#waSticky .wa-fab__svg, .wa-fab .wa-fab__svg{
+  font-size: initial !important;
+}
+@media (max-width: 520px){
+  #waSticky, .wa-fab{
+    width: 60px !important;
+    height: 60px !important;
+  }
+}

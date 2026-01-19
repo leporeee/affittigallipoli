@@ -187,13 +187,12 @@
       </div>
 
       
-
-<!-- CLEAN_FILTERS_V3:BAR -->
-<div class="caseBar" id="caseBar">
-  <div class="caseBar__row">
-    <div class="caseBar__group">
-      <div class="caseBar__label">Ospiti</div>
-      <div class="chips" id="cbGuests">
+<!-- LITE_CLEAN_A_V2:MINIFILTERS -->
+<div class="miniFilters" id="miniFilters">
+  <div class="miniFilters__row">
+    <div class="miniFilters__group">
+      <div class="miniFilters__label">Ospiti</div>
+      <div class="chips" id="mfGuests">
         <button class="chip is-active" type="button" data-guest="all">Tutti</button>
         <button class="chip" type="button" data-guest="2-4">2–4</button>
         <button class="chip" type="button" data-guest="4-8">4–8</button>
@@ -202,35 +201,27 @@
       </div>
     </div>
 
-    <div class="caseBar__group">
-      <div class="caseBar__label">Zona</div>
-      <div class="chips" id="cbZones">
+    <div class="miniFilters__group">
+      <div class="miniFilters__label">Zona</div>
+      <div class="chips" id="mfZones">
         <button class="chip is-active" type="button" data-zone="all">Tutte</button>
       </div>
     </div>
 
-    <div class="caseBar__right">
-      <div class="caseBar__label">Ordina</div>
-      <select class="caseBar__select" id="cbSort" aria-label="Ordina">
-        <option value="default">Consigliate</option>
-        <option value="guestsAsc">Ospiti ↑</option>
-        <option value="guestsDesc">Ospiti ↓</option>
-        <option value="zoneAZ">Zona A–Z</option>
-      </select>
-      <button class="btn btn--ghost" id="cbReset" type="button">Reset</button>
+    <div class="miniFilters__group miniFilters__tools">
+      <button class="btn btn--ghost" id="mfReset" type="button">Reset</button>
     </div>
   </div>
 
-  <div class="caseBar__meta">
-    <span id="cbCount" class="results">Mostro tutte le case</span>
-    <span id="cbEmpty" class="empty" style="display:none;">Nessuna casa per questi filtri. Prova un’altra fascia o una zona diversa.</span>
+  <div class="miniFilters__meta">
+    <span id="mfCount" class="results">Mostro tutte le case</span>
   </div>
 </div>
 
 <div class="cards" id="cardsGrid">
         <!-- Nota: niente / all'inizio degli URL, così funziona bene anche aprendo index.html in locale -->
 
-        <article class="card property-card" data-name="ATENA" data-zone="Baia Verde" data-guests="9" data-href="case/atena.html"><a class="cardLinkOverlay" href="case/atena.html" aria-label="Apri dettagli"></a>
+        <article class="card property-card" data-name="ATENA" data-zone="Baia Verde" data-guests="9" data-href="case/atena.html">
           <a class="card__media" href="case/atena.html" aria-label="Apri scheda ATENA">
             <img src="img/case/atena.jpg" alt="ATENA" loading="lazy">
           </a>
@@ -248,7 +239,7 @@
           </div>
         </article>
 
-        <article class="card property-card" data-name="BAIA VERDE" data-zone="Baia Verde" data-guests="6" data-href="case/baia-verde.html"><a class="cardLinkOverlay" href="case/baia-verde.html" aria-label="Apri dettagli"></a>
+        <article class="card property-card" data-name="BAIA VERDE" data-zone="Baia Verde" data-guests="6" data-href="case/baia-verde.html">
           <a class="card__media" href="case/baia-verde.html" aria-label="Apri scheda BAIA VERDE">
             <img src="img/case/baia-verde.jpg" alt="BAIA VERDE" loading="lazy">
           </a>
@@ -266,7 +257,7 @@
           </div>
         </article>
 
-        <article class="card property-card" data-name="VILLA AZZURRA" data-zone="Baia Verde" data-guests="10" data-href="case/villa-azzurra.html"><a class="cardLinkOverlay" href="case/villa-azzurra.html" aria-label="Apri dettagli"></a>
+        <article class="card property-card" data-name="VILLA AZZURRA" data-zone="Baia Verde" data-guests="10" data-href="case/villa-azzurra.html">
           <a class="card__media" href="case/villa-azzurra.html" aria-label="Apri scheda VILLA AZZURRA">
             <img src="img/case/villa-azzurra.jpg" alt="VILLA AZZURRA" loading="lazy">
           </a>
@@ -284,7 +275,7 @@
           </div>
         </article>
 
-        <article class="card property-card" data-name="ZEUS" data-zone="Baia Verde" data-guests="7" data-href="case/zeus.html"><a class="cardLinkOverlay" href="case/zeus.html" aria-label="Apri dettagli"></a>
+        <article class="card property-card" data-name="ZEUS" data-zone="Baia Verde" data-guests="7" data-href="case/zeus.html">
           <a class="card__media" href="case/zeus.html" aria-label="Apri scheda ZEUS">
             <img src="img/case/zeus.jpg" alt="ZEUS" loading="lazy">
           </a>
@@ -302,7 +293,7 @@
           </div>
         </article>
 
-        <article class="card property-card" data-name="SIRENA" data-zone="Baia Verde" data-guests="5" data-href="case/sirena.html"><a class="cardLinkOverlay" href="case/sirena.html" aria-label="Apri dettagli"></a>
+        <article class="card property-card" data-name="SIRENA" data-zone="Baia Verde" data-guests="5" data-href="case/sirena.html">
           <a class="card__media" href="case/sirena.html" aria-label="Apri scheda SIRENA">
             <img src="img/case/sirena.jpg" alt="SIRENA" loading="lazy">
           </a>
@@ -320,7 +311,7 @@
           </div>
         </article>
 
-        <article class="card property-card" data-name="ARMONIA" data-zone="Gallipoli" data-guests="5" data-href="case/armonia.html"><a class="cardLinkOverlay" href="case/armonia.html" aria-label="Apri dettagli"></a>
+        <article class="card property-card" data-name="ARMONIA" data-zone="Gallipoli" data-guests="5" data-href="case/armonia.html">
           <a class="card__media" href="case/armonia.html" aria-label="Apri scheda ARMONIA">
             <img src="img/case/armonia.jpg" alt="ARMONIA" loading="lazy">
           </a>
@@ -338,7 +329,7 @@
           </div>
         </article>
 
-        <article class="card property-card" data-name="VILLETTA GEMMA C" data-zone="Gallipoli" data-guests="4" data-href="case/villetta-gemma-c.html"><a class="cardLinkOverlay" href="case/villetta-gemma-c.html" aria-label="Apri dettagli"></a>
+        <article class="card property-card" data-name="VILLETTA GEMMA C" data-zone="Gallipoli" data-guests="4" data-href="case/villetta-gemma-c.html">
           <a class="card__media" href="case/villetta-gemma-c.html" aria-label="Apri scheda VILLETTA GEMMA C">
             <img src="img/case/villetta-gemma-c.jpg" alt="VILLETTA GEMMA C" loading="lazy">
           </a>
@@ -356,7 +347,7 @@
           </div>
         </article>
 
-        <article class="card property-card" data-name="BAIACRI" data-zone="Gallipoli" data-guests="6" data-href="case/baiacri.html"><a class="cardLinkOverlay" href="case/baiacri.html" aria-label="Apri dettagli"></a>
+        <article class="card property-card" data-name="BAIACRI" data-zone="Gallipoli" data-guests="6" data-href="case/baiacri.html">
           <a class="card__media" href="case/baiacri.html" aria-label="Apri scheda BAIACRI">
             <img src="img/case/baiacri.jpg" alt="BAIACRI" loading="lazy">
           </a>
@@ -374,7 +365,7 @@
           </div>
         </article>
 
-        <article class="card property-card" data-name="MIRAMARE" data-zone="Gallipoli" data-guests="8" data-href="case/miramare.html"><a class="cardLinkOverlay" href="case/miramare.html" aria-label="Apri dettagli"></a>
+        <article class="card property-card" data-name="MIRAMARE" data-zone="Gallipoli" data-guests="8" data-href="case/miramare.html">
           <a class="card__media" href="case/miramare.html" aria-label="Apri scheda MIRAMARE">
             <img src="img/case/miramare.jpg" alt="MIRAMARE" loading="lazy">
           </a>
@@ -392,7 +383,7 @@
           </div>
         </article>
 
-        <article class="card property-card" data-name="LA PERLA" data-zone="Gallipoli" data-guests="10" data-href="case/la-perla.html"><a class="cardLinkOverlay" href="case/la-perla.html" aria-label="Apri dettagli"></a>
+        <article class="card property-card" data-name="LA PERLA" data-zone="Gallipoli" data-guests="10" data-href="case/la-perla.html">
           <a class="card__media" href="case/la-perla.html" aria-label="Apri scheda LA PERLA">
             <img src="img/case/la-perla.jpg" alt="LA PERLA" loading="lazy">
           </a>
@@ -410,7 +401,7 @@
           </div>
         </article>
 
-        <article class="card property-card" data-name="MONDONUOVO" data-zone="Gallipoli" data-guests="7" data-href="case/mondonuovo.html"><a class="cardLinkOverlay" href="case/mondonuovo.html" aria-label="Apri dettagli"></a>
+        <article class="card property-card" data-name="MONDONUOVO" data-zone="Gallipoli" data-guests="7" data-href="case/mondonuovo.html">
           <a class="card__media" href="case/mondonuovo.html" aria-label="Apri scheda MONDONUOVO">
             <img src="img/case/mondonuovo.jpg" alt="MONDONUOVO" loading="lazy">
           </a>

@@ -482,39 +482,121 @@ window.buildWhatsAppLink = buildWhatsAppLink;
 })();
 
 
-// === CLEAN_FILTERS_V3:JS ===
+// === LITE_CLEAN_A_V2:JS ===
 (function(){
-  function norm(s){ return (s||"").toString().trim(); }
-  function cardsWrap(){ return document.querySelector(".cards"); }
   function cards(){ return Array.from(document.querySelectorAll(".card")); }
+  function norm(s){ return (s||"").toString().trim(); }
 
-  function parseGuestsFromCard(card){
-    var d = card.dataset.guests;
-    if(d) return parseInt(d,10);
-    var t = card.textContent || "";
-    var m = t.match(/(\d{1,2})\s*osp/i) || t.match(/(\d{1,2})\s*ospiti/i);
-    return m ? parseInt(m[1],10) : 0;
-  }
-
-  function parseZoneFromCard(card){
-    var d = card.dataset.zone;
-    if(d) return norm(d);
-    var t = card.textContent || "";
-    // prova a prendere Baia Verde / Gallipoli ecc. se presenti
-    var zones = ["Baia Verde","Gallipoli","Lido San Giovanni","Centro","Rivabella","Alezio"];
-    for(var i=0;i<zones.length;i++){ if(t.toLowerCase().includes(zones[i].toLowerCase())) return zones[i]; }
-    // fallback: cerca dopo 📍
-    var m = t.match(/📍\s*([^\n•]+)/);
-    return m ? norm(m[1]) : "";
+  function parseRange(v){
+    if(!v || v==="all") return {min:0,max:99,label:"Tutti"};
+    if(v==="12+") return {min:12,max:99,label:"12+"};
+    var m = v.match(/(\d+)\s*[-–]\s*(\d+)/);
+    if(m) return {min:parseInt(m[1],10),max:parseInt(m[2],10),label:v};
+    return {min:0,max:99,label:"Tutti"};
   }
 
   function uniqueZones(){
     var set = new Set();
     cards().forEach(function(c){
-      var z = parseZoneFromCard(c);
+      var z = norm(c.dataset.zone);
       if(z) set.add(z);
-      c.dataset.zone = z; // normalizza
-      c.dataset.guests = String(parseGuestsFromCard(c)); // normalizza
+    });
+    return Array.from(set).sort(function(a,b){ return a.localeCompare(b); });
+  }
+
+  function populateZones(){
+    var wrap = document.getElementById("mfZones");
+    if(!wrap) return;
+    wrap.querySelectorAll('[data-zone]:not([data-zone="all"])').forEach(function(n){ n.remove(); });
+    uniqueZones().forEach(function(z){
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "chip";
+      b.dataset.zone = z;
+      b.textContent = z;
+      wrap.appendChild(b);
+    });
+  }
+
+  function setActive(containerId, attr, value){
+    var wrap = document.getElementById(containerId);
+    if(!wrap) return;
+    wrap.querySelectorAll(".chip").forEach(function(b){
+      b.classList.toggle("is-active", b.dataset[attr] === value);
+    });
+  }
+
+  function apply(state){
+    var guest = state.guest || "all";
+    var zone  = state.zone  || "all";
+    var r = parseRange(guest);
+
+    var visible = 0;
+    cards().forEach(function(c){
+      var g = parseInt(c.dataset.guests || "0", 10);
+      var z = norm(c.dataset.zone);
+      var okG = (guest==="all") ? true : (g>=r.min && g<=r.max);
+      var okZ = (zone==="all")  ? true : (z.toLowerCase() === norm(zone).toLowerCase());
+      var ok = okG && okZ;
+      c.style.display = ok ? "" : "none";
+      if(ok) visible++;
+    });
+
+    var cnt = document.getElementById("mfCount");
+    if(cnt){
+      var parts = [];
+      parts.push("Mostro " + visible + " case");
+      if(zone!=="all") parts.push("Zona: " + zone);
+      if(guest!=="all") parts.push("Ospiti: " + guest);
+      cnt.textContent = parts.join(" • ");
+    }
+
+    setActive("mfGuests", "guest", guest);
+    setActive("mfZones", "zone", zone);
+  }
+
+  document.addEventListener("click", function(e){
+    var chip = e.target.closest(".chip");
+    if(!chip) return;
+
+    var activeGuest = document.querySelector("#mfGuests .chip.is-active")?.dataset.guest || "all";
+    var activeZone  = document.querySelector("#mfZones .chip.is-active")?.dataset.zone || "all";
+
+    var next = { guest: activeGuest, zone: activeZone };
+    if(chip.dataset.guest) next.guest = chip.dataset.guest;
+    if(chip.dataset.zone)  next.zone  = chip.dataset.zone;
+
+    apply(next);
+  });
+
+  document.addEventListener("DOMContentLoaded", function(){
+    populateZones();
+    apply({ guest:"all", zone:"all" });
+    var reset = document.getElementById("mfReset");
+    if(reset) reset.addEventListener("click", function(){ apply({ guest:"all", zone:"all" }); });
+  });
+})();
+// === END LITE_CLEAN_A_V2:JS ===
+
+
+// === PATCH_A_LITE_CLEAN_V1:JS ===
+(function(){
+  function cards(){ return Array.from(document.querySelectorAll(".card")); }
+  function norm(s){ return (s||"").toString().trim(); }
+
+  function parseRange(v){
+    if(!v || v==="all") return {min:0,max:99,label:"Tutti"};
+    if(v==="12+") return {min:12,max:99,label:"12+"};
+    var m = v.match(/(\d+)\s*[-–]\s*(\d+)/);
+    if(m) return {min:parseInt(m[1],10),max:parseInt(m[2],10),label:v};
+    return {min:0,max:99,label:"Tutti"};
+  }
+
+  function uniqueZones(){
+    var set = new Set();
+    cards().forEach(function(c){
+      var z = norm(c.dataset.zone);
+      if(z) set.add(z);
     });
     return Array.from(set).sort(function(a,b){ return a.localeCompare(b); });
   }
@@ -533,14 +615,6 @@ window.buildWhatsAppLink = buildWhatsAppLink;
     });
   }
 
-  function parseRange(v){
-    if(!v || v==="all") return {min:0,max:99};
-    if(v==="12+") return {min:12,max:99};
-    var m = v.match(/(\d+)\s*[-–]\s*(\d+)/);
-    if(m) return {min:parseInt(m[1],10), max:parseInt(m[2],10)};
-    return {min:0,max:99};
-  }
-
   function setActive(containerId, attr, value){
     var wrap = document.getElementById(containerId);
     if(!wrap) return;
@@ -549,7 +623,7 @@ window.buildWhatsAppLink = buildWhatsAppLink;
     });
   }
 
-  function applyFilters(state){
+  function apply(state){
     var guest = state.guest || "all";
     var zone  = state.zone  || "all";
     var r = parseRange(guest);
@@ -580,81 +654,6 @@ window.buildWhatsAppLink = buildWhatsAppLink;
     setActive("cbZones","zone",zone);
   }
 
-  function setupSort(){
-    var sel = document.getElementById("cbSort");
-    var wrap = cardsWrap();
-    if(!sel || !wrap) return;
-
-    // salva ordine originale
-    var original = Array.from(wrap.children);
-    original.forEach(function(el, i){ el.dataset.orig = String(i); });
-
-    function sortNow(mode){
-      var items = Array.from(wrap.children);
-      function guests(el){ return parseInt(el.dataset.guests||"0",10); }
-      function zone(el){ return norm(el.dataset.zone).toLowerCase(); }
-      function orig(el){ return parseInt(el.dataset.orig||"0",10); }
-
-      if(mode==="default") items.sort(function(a,b){ return orig(a)-orig(b); });
-      if(mode==="guestsAsc") items.sort(function(a,b){ return guests(a)-guests(b) || orig(a)-orig(b); });
-      if(mode==="guestsDesc") items.sort(function(a,b){ return guests(b)-guests(a) || orig(a)-orig(b); });
-      if(mode==="zoneAZ") items.sort(function(a,b){ return zone(a).localeCompare(zone(b)) || orig(a)-orig(b); });
-
-      items.forEach(function(el){ wrap.appendChild(el); });
-    }
-
-    sel.addEventListener("change", function(){ sortNow(sel.value); });
-    sortNow("default");
-  }
-
-  function makeCardsClickable(){
-    document.addEventListener("click", function(e){
-      var card = e.target.closest(".card");
-      if(!card) return;
-      if(e.target.closest("a,button,select,textarea,input")) return;
-
-      var link = card.querySelector('a[href*="case/"]');
-      if(link) window.location.href = link.getAttribute("href");
-    });
-  }
-
-  function hideLegacyToolbar(){
-    // Cerca l'heading "Case consigliate" e nasconde il box che lo contiene
-    var headings = Array.from(document.querySelectorAll("h1,h2,h3,h4,p,strong"));
-    var h = headings.find(function(x){ return norm(x.textContent).toLowerCase() === "case consigliate"; });
-    if(!h) return;
-
-    var box = h.closest("div");
-    // sali finché trovi un box che contiene input+select (toolbar)
-    for(var i=0;i<4 && box; i++) {
-      var hasInput = !!box.querySelector('input[placeholder*="Cerca"]');
-      var hasSelect = !!box.querySelector("select");
-      var hasCards = box.querySelectorAll(".card").length > 0;
-      if(hasInput && hasSelect && !hasCards) break;
-      box = box.parentElement;
-    }
-    if(box) box.classList.add("legacyHide");
-  }
-
-  function removeDuplicateBars(){
-    var bars = Array.from(document.querySelectorAll("#caseBar"));
-    if(bars.length <= 1) return;
-    // tieni l'ultimo (di solito è quello vicino alle cards)
-    for(var i=0;i<bars.length-1;i++) bars[i].remove();
-  }
-
-  document.addEventListener("DOMContentLoaded", function(){
-    hideLegacyToolbar();
-    removeDuplicateBars();
-    populateZones();
-    applyFilters({guest:"all", zone:"all"});
-    setupSort();
-    makeCardsClickable();
-
-    var reset = document.getElementById("cbReset");
-    if(reset) reset.addEventListener("click", function(){ applyFilters({guest:"all", zone:"all"}); });
-  });
-
   document.addEventListener("click", function(e){
     var chip = e.target.closest(".chip");
     if(!chip) return;
@@ -666,7 +665,15 @@ window.buildWhatsAppLink = buildWhatsAppLink;
     if(chip.dataset.guest) next.guest = chip.dataset.guest;
     if(chip.dataset.zone)  next.zone  = chip.dataset.zone;
 
-    applyFilters(next);
+    apply(next);
+  });
+
+  document.addEventListener("DOMContentLoaded", function(){
+    populateZones();
+    apply({guest:"all", zone:"all"});
+    var reset = document.getElementById("cbReset");
+    if(reset) reset.addEventListener("click", function(){ apply({guest:"all", zone:"all"}); });
   });
 })();
+// === END PATCH_A_LITE_CLEAN_V1:JS ===
 

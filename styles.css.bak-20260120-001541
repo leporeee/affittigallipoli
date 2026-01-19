@@ -702,63 +702,92 @@ textarea{resize:vertical}
 }
 
 
-/* === CLEAN_FILTERS_V3:CSS === */
+/* === LITE_CLEAN_A_V2:CSS === */
 
-/* Barra filtri UNICA: sottile e pulita */
-.caseBar {
-  position: sticky;
-  top: 70px;
-  z-index: 12;
-  margin: 10px 0 16px;
-  padding: 10px 12px;
+/* Mini filters (NON sticky) */
+.miniFilters{
+  margin: 6px 0 16px;
+  padding: 12px;
   border-radius: var(--radius);
   border: 1px solid var(--line);
-  background: rgba(11,13,18,.62);
-  backdrop-filter: blur(6px);
-  box-shadow: 0 14px 34px rgba(0,0,0,.28);
+  background: rgba(11,13,18,.55);
+  backdrop-filter: blur(8px);
+  box-shadow: var(--shadow);
 }
-
-.caseBar__row {
+.miniFilters__row{
   display:flex;
   gap: 12px;
   flex-wrap: wrap;
   align-items: end;
 }
+.miniFilters__group{ display:flex; flex-direction:column; gap:8px; }
+.miniFilters__label{ font-size:12px; color: var(--muted); }
+.miniFilters__tools{ margin-left: auto; }
+.miniFilters__meta{ margin-top: 10px; display:flex; justify-content:space-between; align-items:center; }
+.results{ color: var(--muted); font-size: 13px; }
 
+/* Chips */
+.chips{ display:flex; gap:8px; flex-wrap:wrap; }
+.chip{
+  padding: 9px 11px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.04);
+  color: var(--text);
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  transition: transform .12s ease, background .12s ease, border-color .12s ease;
+}
+.chip:hover{ transform: translateY(-1px); background: rgba(255,255,255,.07); }
+.chip.is-active{
+  background: rgba(69,102,255,.18);
+  border-color: rgba(69,102,255,.45);
+}
+
+/* Card media link */
+.card__mediaLink img{ transition: transform .22s ease; }
+.card:hover .card__mediaLink img{ transform: scale(1.02); }
+
+
+/* === PATCH_A_LITE_CLEAN_V1:CSS === */
+
+/* Sticky sottile solo in sezione case */
+.caseBar {
+  position: sticky;
+  top: 70px;
+  z-index: 12;
+  margin: 10px 0 16px;
+  padding: 12px;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: rgba(11,13,18,.62);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 16px 40px rgba(0,0,0,.30);
+}
+.caseBar__row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: end;
+}
 .caseBar__group { display:flex; flex-direction:column; gap:8px; }
 .caseBar__label { font-size:12px; color: var(--muted); }
-
-.caseBar__right {
-  margin-left: auto;
-  display:flex;
-  gap:10px;
-  align-items:end;
-  flex-wrap: wrap;
-}
-
-.caseBar__select {
-  border-radius: 14px;
-  border: 1px solid var(--line);
-  background: rgba(11,13,18,.55);
-  color: var(--text);
-  padding: 9px 10px;
-  font: inherit;
-}
-
+.caseBar__right { margin-left: auto; display:flex; align-items:end; }
 .caseBar__meta {
-  margin-top: 8px;
+  margin-top: 10px;
   display:flex;
   gap: 12px;
   align-items:center;
   flex-wrap: wrap;
 }
-
-.results, .empty { color: var(--muted); font-size: 13px; }
+.results { color: var(--muted); font-size: 13px; }
+.empty { color: var(--muted); font-size: 13px; opacity: .95; }
 
 /* Chips */
 .chips { display:flex; gap:8px; flex-wrap:wrap; }
 .chip {
-  padding: 8px 11px;
+  padding: 9px 11px;
   border-radius: 999px;
   border: 1px solid var(--line);
   background: rgba(255,255,255,.04);
@@ -774,6 +803,16 @@ textarea{resize:vertical}
   border-color: rgba(69,102,255,.45);
 }
 
-/* Nascondi la barra legacy "Case consigliate" (verrà marcata via JS) */
-.legacyHide { display:none !important; }
-
+/* Card clickable overlay */
+.card { position: relative; }
+.cardLinkOverlay {
+  position:absolute;
+  inset:0;
+  z-index:2;
+  border-radius: inherit;
+}
+/* lascia i bottoni cliccabili sopra overlay */
+.card a.btn, .card button, .card .btn {
+  position: relative;
+  z-index: 3;
+}

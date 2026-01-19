@@ -333,3 +333,150 @@ document.addEventListener("DOMContentLoaded", init);
 
 // export (utile se vuoi riusare la funzione nei file delle case)
 window.buildWhatsAppLink = buildWhatsAppLink;
+
+
+// === PACK A: Sticky WhatsApp + Lightbox ===
+(function(){
+  const DEFAULT_WA_NUMBER = "393292272939";
+  function buildWA(msg){
+    try{
+      if(typeof buildWhatsAppLink === "function") return buildWhatsAppLink(msg);
+    }catch(e){}
+    const base = "https://wa.me/";
+    const num = (typeof WHATSAPP_NUMBER !== "undefined" ? WHATSAPP_NUMBER : DEFAULT_WA_NUMBER);
+    return `${base}${num}?text=${encodeURIComponent(msg)}`;
+  }
+
+  function setStickyWA(){
+    const a = document.getElementById("waSticky");
+    if(!a) return;
+
+    const propertyBtn = document.getElementById("waProperty");
+    const propertyName = propertyBtn?.dataset?.propertyName;
+
+    const msg = propertyName
+      ? `Ciao! Vorrei disponibilità per: ${propertyName}.`
+      : "Ciao! Vorrei ricevere disponibilità per una casa/villa a Gallipoli (estate).";
+
+    a.href = buildWA(msg);
+
+    if(propertyBtn){
+      propertyBtn.href = buildWA(msg);
+    }
+  }
+
+  function initLightbox(){
+    const isCase = window.location.pathname.includes("/case/");
+    if(!isCase) return;
+
+    const imgs = Array.from(document.querySelectorAll("img"))
+      .filter(img => {
+        const src = (img.getAttribute("src")||"").toLowerCase();
+        return src.match(/\.(jpg|jpeg|png|webp)$/);
+      });
+
+    if(!imgs.length) return;
+
+    let lb = document.querySelector(".lb");
+    if(!lb){
+      lb = document.createElement("div");
+      lb.className = "lb";
+      lb.innerHTML = `
+        <div class="lb__inner" role="dialog" aria-modal="true">
+          <img class="lb__img" alt="">
+          <button class="lb__x" aria-label="Chiudi">✕</button>
+          <button class="lb__nav lb__prev" aria-label="Foto precedente">‹</button>
+          <button class="lb__nav lb__next" aria-label="Foto successiva">›</button>
+        </div>
+      `;
+      document.body.appendChild(lb);
+    }
+
+    const imgEl = lb.querySelector(".lb__img");
+    const btnX = lb.querySelector(".lb__x");
+    const btnPrev = lb.querySelector(".lb__prev");
+    const btnNext = lb.querySelector(".lb__next");
+
+    let i = 0;
+    function openAt(idx){
+      i = (idx + imgs.length) % imgs.length;
+      imgEl.src = imgs[i].getAttribute("src");
+      imgEl.alt = imgs[i].alt || "Foto";
+      lb.classList.add("open");
+      document.body.style.overflow = "hidden";
+    }
+    function close(){
+      lb.classList.remove("open");
+      document.body.style.overflow = "";
+      imgEl.removeAttribute("src");
+    }
+    function prev(){ openAt(i-1); }
+    function next(){ openAt(i+1); }
+
+    imgs.forEach((im, idx)=>{
+      im.style.cursor = "zoom-in";
+      im.addEventListener("click", ()=>openAt(idx));
+    });
+
+    btnX.addEventListener("click", close);
+    btnPrev.addEventListener("click", prev);
+    btnNext.addEventListener("click", next);
+    lb.addEventListener("click", (e)=>{ if(e.target === lb) close(); });
+
+    window.addEventListener("keydown", (e)=>{
+      if(!lb.classList.contains("open")) return;
+      if(e.key === "Escape") close();
+      if(e.key === "ArrowLeft") prev();
+      if(e.key === "ArrowRight") next();
+    });
+
+    let startX = null;
+    lb.addEventListener("touchstart", (e)=>{ startX = e.touches?.[0]?.clientX ?? null; }, {passive:true});
+    lb.addEventListener("touchend", (e)=>{
+      if(startX === null) return;
+      const endX = e.changedTouches?.[0]?.clientX ?? startX;
+      const dx = endX - startX;
+      if(Math.abs(dx) > 40){
+        dx > 0 ? prev() : next();
+      }
+      startX = null;
+    }, {passive:true});
+  }
+
+  document.addEventListener("DOMContentLoaded", ()=>{
+    setStickyWA();
+    initLightbox();
+  });
+})();
+// WhatsApp floating: show on desktop after scroll, hide near footer
+(function(){
+  const fab = document.getElementById("waSticky");
+  if(!fab) return;
+
+  const DESKTOP_SCROLL_SHOW = 160;
+
+  function update(){
+    if(window.innerWidth <= 520){
+      fab.classList.add("is-visible");
+      return;
+    }
+    fab.classList.toggle("is-visible", window.scrollY > DESKTOP_SCROLL_SHOW);
+  }
+
+  window.addEventListener("scroll", update, { passive: true });
+  window.addEventListener("resize", update);
+  update();
+
+  const footer = document.querySelector("footer");
+  if(footer && "IntersectionObserver" in window){
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(window.innerWidth > 520){
+          const shouldShow = !e.isIntersecting && window.scrollY > DESKTOP_SCROLL_SHOW;
+          fab.classList.toggle("is-visible", shouldShow);
+        }
+      });
+    }, { threshold: 0.15 });
+    io.observe(footer);
+  }
+})();

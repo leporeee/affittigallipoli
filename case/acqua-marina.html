@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Acqua Marina – Baia Verde (4 posti)</title>
+  <title>Acqua Marina – Baia Verde (4 posti) | Salento Stay</title>
   <link rel="stylesheet" href="../styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -62,5 +62,18 @@
     const wa = document.getElementById("waHouse");
     if (wa && window.buildWhatsAppLink) wa.href = window.buildWhatsAppLink(msg);
   </script>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span class="muted">© <span id="year"></span> Salento Stay</span>
+      <div class="footer__links">
+        <a href="../privacy.html">Privacy</a>
+        <a id="waFooter" href="#">Contatti</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+
 </body>
 </html>

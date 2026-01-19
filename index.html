@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Case Vacanza in Salento | Prenota su WhatsApp</title>
+  <title>Salento Stay | Case vacanza a Gallipoli (prenoti su WhatsApp)</title>
+  <meta name="description" content="Vetrina di case e ville selezionate a Gallipoli e nel Salento. Niente prenotazioni online: richiedi disponibilità e preventivo su WhatsApp." />
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,334 +14,436 @@
 
 <header class="topbar">
   <div class="container topbar__inner">
-    <div class="brand">
+    <a class="brand" href="#top" aria-label="Torna in alto">
+      <div class="brand__logo" aria-hidden="true">SS</div>
       <div>
-        <div class="brand__name">Estate A Gallipoli</div>
-        <div class="brand__tagline">Case e ville selezionate</div>
+        <div class="brand__name">Salento Stay</div>
+        <div class="brand__tagline">Case e ville selezionate • Gallipoli</div>
       </div>
-    </div>
-    <a id="waHero" class="btn btn--secondary">Contattaci su WhatsApp</a>
+    </a>
+
+    <nav class="nav" aria-label="Navigazione">
+      <a class="nav__link" href="#opzioni">Posti</a>
+      <a class="nav__link" href="#case">Case</a>
+      <a class="nav__link" href="#form">Disponibilità</a>
+    </nav>
+
+    <a id="waHero" class="btn btn--secondary" href="#">WhatsApp</a>
   </div>
 </header>
 
-<section class="hero">
-  <div class="container hero__grid">
-    <div>
-      <span class="pill">Affitti estivi diretti</span>
-      <h1>Case vacanza selezionate a Gallipoli e nel Salento</h1>
-      <p class="lead">Contatto diretto, senza commissioni. Dimmi quando arrivi e troviamo la soluzione giusta.</p>
-      <div class="hero__cta">
-        <a class="btn btn--primary" href="#form">Verifica disponibilità</a>
-        <a class="btn btn--ghost" href="#case">Vedi le case</a>
+<main id="top">
+  <section class="hero">
+    <div class="container hero__grid">
+      <div class="hero__copy">
+        <span class="pill">Affitti estivi diretti</span>
+        <h1>Case vacanza selezionate a Gallipoli e nel Salento</h1>
+        <p class="lead">Una vetrina semplice e chiara: scegli la casa, poi prenoti su WhatsApp. <span class="lead-strong">Sempre reperibili</span>, rispondiamo velocemente.</p>
+
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="#form">Verifica disponibilità</a>
+          <a class="btn btn--ghost" href="#case">Vedi le case</a>
+        </div>
+
+        <div class="hero__trust" aria-label="Punti di forza">
+          <span class="trust__item">✔ Risposta rapida</span>
+          <span class="trust__item">✔ Assistenza reale</span>
+          <span class="trust__item">✔ Prenoti via WhatsApp</span>
+        </div>
       </div>
-      <div class="hero__trust">
-        <span class="trust__item">✔ Risposta rapida</span>
-        <span class="trust__item">✔ Assistenza reale</span>
-        <span class="trust__item">✔ Prenoti via WhatsApp</span>
-      </div>
-    </div>
-    <div class="hero__media">
-      <div class="hero-slider" aria-label="Galleria strutture">
+
+      <div class="hero__media" aria-label="Galleria">
+        <div class="hero-slider" aria-hidden="true">
           <img class="hero-slide is-active" src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1400&q=80" alt="Interno elegante" loading="eager" />
           <img class="hero-slide" src="https://images.unsplash.com/photo-1445019980597-93fa8acb246c?auto=format&fit=crop&w=1400&q=80" alt="Terrazza vista mare" loading="lazy" />
           <img class="hero-slide" src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1400&q=80" alt="Camera luminosa" loading="lazy" />
           <img class="hero-slide" src="https://images.unsplash.com/photo-1501183638710-841dd1904471?auto=format&fit=crop&w=1400&q=80" alt="Soggiorno moderno" loading="lazy" />
           <img class="hero-slide" src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1400&q=80" alt="Dettagli di design" loading="lazy" />
-
-          <div class="media__badge">
-            <div class="badge__big">20+ strutture</div>
-            
-          </div>
         </div>
-        </div></div>
-        
-      </div>
+
+        <div class="media__badge">
+          <div class="badge__big">20+ strutture</div>
+          <div class="badge__small">Preventivo su WhatsApp</div>
         </div>
-    </div>
-  </div>
-</section>
-
-<section id="opzioni" class="section section--alt">
-  <div class="container">
-    <div class="section__head">
-      <h2>Quanti siete?</h2>
-      <p>Scegli la fascia posti: ti guidiamo verso le soluzioni più adatte prima di vedere tutte le case.</p>
-    </div>
-
-    <div class="options">
-      <button class="option-card" type="button" data-min="2" data-max="4" aria-pressed="false">
-        <div class="option-card__top">
-          <div class="option-card__icon">👫</div>
-          <div>
-            <div class="option-card__title">2–4 posti</div>
-            <div class="option-card__sub">Coppie & piccoli gruppi</div>
-          </div>
-        </div>
-        <div class="option-card__desc">Monolocali, bilocali e appartamenti comodi vicino al mare o al centro.</div>
-      </button>
-
-      <button class="option-card" type="button" data-min="4" data-max="8" aria-pressed="false">
-        <div class="option-card__top">
-          <div class="option-card__icon">👨‍👩‍👧‍👦</div>
-          <div>
-            <div class="option-card__title">4–8 posti</div>
-            <div class="option-card__sub">Famiglie & amici</div>
-          </div>
-        </div>
-        <div class="option-card__desc">Case indipendenti e appartamenti grandi: più camere, più spazio, più comfort.</div>
-      </button>
-
-      <button class="option-card" type="button" data-min="8" data-max="12" aria-pressed="false">
-        <div class="option-card__top">
-          <div class="option-card__icon">🏡</div>
-          <div>
-            <div class="option-card__title">8–12 posti</div>
-            <div class="option-card__sub">Ville & villette</div>
-          </div>
-        </div>
-        <div class="option-card__desc">Ideali per gruppi: spazi esterni, più bagni e privacy tra camere.</div>
-      </button>
-
-      <button class="option-card" type="button" data-min="12" data-max="99" aria-pressed="false">
-        <div class="option-card__top">
-          <div class="option-card__icon">✨</div>
-          <div>
-            <div class="option-card__title">12+ posti</div>
-            <div class="option-card__sub">Gruppi grandi</div>
-          </div>
-        </div>
-        <div class="option-card__desc">Soluzioni su richiesta: più unità vicine o proprietà grandi per comitive.</div>
-      </button>
-    </div>
-
-    <p class="note">Non trovi la fascia perfetta? <a class="link-inline" href="#form">Scrivici le date</a> e ti proponiamo noi le migliori opzioni disponibili.</p>
-  </div>
-</section>
-
-<section id="case" class="section section--alt">
-  <div class="container">
-    <div class="section__head">
-      <h2>Le nostre case</h2>
-      <p>Selezione di alloggi ideali per vacanze estive</p>
-    </div>
-
-    <div class="filterbar" id="filterbar" aria-live="polite">
-      <div class="filterbar__left">
-        <div class="filterbar__title">Case consigliate</div>
-        <div class="filterbar__meta" id="resultsMeta">Seleziona una fascia posti per vedere le case adatte.</div>
-      </div>
-      <div class="filterbar__right">
-        <button class="btn btn--ghost" type="button" id="btnShowAll" hidden>Mostra tutte</button>
       </div>
     </div>
-    <!-- AUTO_CARDS_START -->
-<div class="cards">
-<article class="card" data-guests="9">
-        <img src="/img/case/atena.jpg" alt="ATENA">
-        <div class="card__body">
-          <h3>ATENA</h3>
-          <ul class="meta">
-            <li>📍 Baia Verde</li>
-            <li>👥 9 ospiti</li>
-            <li>🛏️ 3 camere + 2 bagni</li>
-          </ul>
-          <div class="card__foot">
-            <a class="link" href="/case/atena.html">Vedi dettagli →</a>
-          </div>
-        </div>
-      </article>
-<article class="card" data-guests="6">
-        <img src="/img/case/baia-verde.jpg" alt="BAIA VERDE">
-        <div class="card__body">
-          <h3>BAIA VERDE</h3>
-          <ul class="meta">
-            <li>📍 Baia Verde</li>
-            <li>👥 6 ospiti</li>
-            <li>🚗 Parcheggio privato custodito</li>
-          </ul>
-          <div class="card__foot">
-            <a class="link" href="/case/baia-verde.html">Vedi dettagli →</a>
-          </div>
-        </div>
-      </article>
-<article class="card" data-guests="10">
-        <img src="/img/case/villa-azzurra.jpg" alt="VILLA AZZURRA">
-        <div class="card__body">
-          <h3>VILLA AZZURRA</h3>
-          <ul class="meta">
-            <li>📍 Baia Verde</li>
-            <li>👥 10 ospiti</li>
-            <li>🌿 Giardino attrezzato + terrazzo</li>
-          </ul>
-          <div class="card__foot">
-            <a class="link" href="/case/villa-azzurra.html">Vedi dettagli →</a>
-          </div>
-        </div>
-      </article>
-<article class="card" data-guests="7">
-        <img src="/img/case/zeus.jpg" alt="ZEUS">
-        <div class="card__body">
-          <h3>ZEUS</h3>
-          <ul class="meta">
-            <li>📍 Baia Verde</li>
-            <li>👥 7 ospiti</li>
-            <li>🚿 Doccia esterna + giardino recintato</li>
-          </ul>
-          <div class="card__foot">
-            <a class="link" href="/case/zeus.html">Vedi dettagli →</a>
-          </div>
-        </div>
-      </article>
-<article class="card" data-guests="5">
-        <img src="/img/case/sirena.jpg" alt="SIRENA">
-        <div class="card__body">
-          <h3>SIRENA</h3>
-          <ul class="meta">
-            <li>📍 Baia Verde</li>
-            <li>👥 5 ospiti</li>
-            <li>🌿 Indipendente con giardino retrostante</li>
-          </ul>
-          <div class="card__foot">
-            <a class="link" href="/case/sirena.html">Vedi dettagli →</a>
-          </div>
-        </div>
-      </article>
-<article class="card" data-guests="5">
-        <img src="/img/case/armonia.jpg" alt="ARMONIA">
-        <div class="card__body">
-          <h3>ARMONIA</h3>
-          <ul class="meta">
-            <li>📍 Gallipoli</li>
-            <li>👥 5 ospiti</li>
-            <li>🌅 Balcone vista mare</li>
-          </ul>
-          <div class="card__foot">
-            <a class="link" href="/case/armonia.html">Vedi dettagli →</a>
-          </div>
-        </div>
-      </article>
-<article class="card" data-guests="4">
-        <img src="/img/case/villetta-gemma-c.jpg" alt="VILLETTA GEMMA C">
-        <div class="card__body">
-          <h3>VILLETTA GEMMA C</h3>
-          <ul class="meta">
-            <li>📍 Gallipoli</li>
-            <li>👥 4 ospiti</li>
-            <li>🆕 Nuova costruzione + doccia esterna</li>
-          </ul>
-          <div class="card__foot">
-            <a class="link" href="/case/villetta-gemma-c.html">Vedi dettagli →</a>
-          </div>
-        </div>
-      </article>
-<article class="card" data-guests="6">
-        <img src="/img/case/baiacri.jpg" alt="BAIACRI">
-        <div class="card__body">
-          <h3>BAIACRI</h3>
-          <ul class="meta">
-            <li>📍 Gallipoli</li>
-            <li>👥 6 ospiti</li>
-            <li>🌅 Balcone vista mare (tende parasole)</li>
-          </ul>
-          <div class="card__foot">
-            <a class="link" href="/case/baiacri.html">Vedi dettagli →</a>
-          </div>
-        </div>
-      </article>
-<article class="card" data-guests="8">
-        <img src="/img/case/miramare.jpg" alt="MIRAMARE">
-        <div class="card__body">
-          <h3>MIRAMARE</h3>
-          <ul class="meta">
-            <li>📍 Gallipoli</li>
-            <li>👥 8 ospiti</li>
-            <li>🛁 2 bagni + 3 camere</li>
-          </ul>
-          <div class="card__foot">
-            <a class="link" href="/case/miramare.html">Vedi dettagli →</a>
-          </div>
-        </div>
-      </article>
-<article class="card" data-guests="10">
-        <img src="/img/case/la-perla.jpg" alt="LA PERLA">
-        <div class="card__body">
-          <h3>LA PERLA</h3>
-          <ul class="meta">
-            <li>📍 Gallipoli</li>
-            <li>👥 10 ospiti</li>
-            <li>❄️ Clima in ogni ambiente</li>
-          </ul>
-          <div class="card__foot">
-            <a class="link" href="/case/la-perla.html">Vedi dettagli →</a>
-          </div>
-        </div>
-      </article>
-<article class="card" data-guests="7">
-        <img src="/img/case/mondonuovo.jpg" alt="MONDONUOVO">
-        <div class="card__body">
-          <h3>MONDONUOVO</h3>
-          <ul class="meta">
-            <li>📍 Gallipoli</li>
-            <li>👥 7 ospiti</li>
-            <li>🏊 Piscina nel residence</li>
-          </ul>
-          <div class="card__foot">
-            <a class="link" href="/case/mondonuovo.html">Vedi dettagli →</a>
-          </div>
-        </div>
-      </article>
-</div>
-<!-- AUTO_CARDS_END -->
+  </section>
 
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
+  <section class="section" id="come-funziona">
+    <div class="container">
+      <div class="section__head">
+        <h2>Come funziona</h2>
+        <p>Zero stress: scegli, chiedi, confermi su WhatsApp.</p>
+      </div>
 
-<section id="form" class="section">
-  <div class="container form__grid">
-    <div>
-      <h2>Richiedi disponibilità</h2>
-      <div class="bullets">
-        <div class="bullet"><span>✔</span> Nessuna prenotazione online</div>
-        <div class="bullet"><span>✔</span> Risposta rapida su WhatsApp</div>
-        <div class="bullet"><span>✔</span> Offerta personalizzata</div>
+      <div class="steps" role="list">
+        <div class="step" role="listitem">
+          <div class="step__icon">📅</div>
+          <div class="step__title">Indicaci le date</div>
+          <div class="step__desc">Check-in, check-out e numero ospiti: bastano 20 secondi.</div>
+        </div>
+        <div class="step" role="listitem">
+          <div class="step__icon">🏠</div>
+          <div class="step__title">Scegli la casa</div>
+          <div class="step__desc">Filtra per posti, cerca per zona e apri le schede dettagli.</div>
+        </div>
+        <div class="step" role="listitem">
+          <div class="step__icon">💬</div>
+          <div class="step__title">Conferma su WhatsApp</div>
+          <div class="step__desc">Ti rispondiamo rapidamente con disponibilità e proposta.</div>
+        </div>
       </div>
     </div>
+  </section>
 
-    <form class="form" id="requestForm">
-      <label>Check-in
-        <input type="date" name="checkin" required>
-      </label>
-      <label>Check-out
-        <input type="date" name="checkout" required>
-      </label>
-      <label>Numero ospiti
-        <input type="number" name="guests" required>
-      </label>
-      <label>Budget indicativo
-        <input type="text" name="budget">
-      </label>
-      <label>Note
-        <textarea name="notes"></textarea>
-      </label>
-      <button class="btn btn--primary btn--full">Invia su WhatsApp</button>
-      <p class="fineprint">Riceverai risposta diretta senza intermediari</p>
-    </form>
-  </div>
-</section>
+  <section id="opzioni" class="section section--alt">
+    <div class="container">
+      <div class="section__head">
+        <h2>Quanti siete?</h2>
+        <p>Scegli la fascia posti: ti mostriamo subito le case più adatte.</p>
+      </div>
+
+      <div class="options" aria-label="Fasce posti">
+        <button class="option-card" type="button" data-min="2" data-max="4" aria-pressed="false">
+          <div class="option-card__top">
+            <div class="option-card__icon">👫</div>
+            <div>
+              <div class="option-card__title">2–4 posti</div>
+              <div class="option-card__sub">Coppie & piccoli gruppi</div>
+            </div>
+          </div>
+          <div class="option-card__desc">Monolocali, bilocali e appartamenti comodi vicino al mare o al centro.</div>
+        </button>
+
+        <button class="option-card" type="button" data-min="4" data-max="8" aria-pressed="false">
+          <div class="option-card__top">
+            <div class="option-card__icon">👨‍👩‍👧‍👦</div>
+            <div>
+              <div class="option-card__title">4–8 posti</div>
+              <div class="option-card__sub">Famiglie & amici</div>
+            </div>
+          </div>
+          <div class="option-card__desc">Case indipendenti e appartamenti grandi: più camere, più spazio, più comfort.</div>
+        </button>
+
+        <button class="option-card" type="button" data-min="8" data-max="12" aria-pressed="false">
+          <div class="option-card__top">
+            <div class="option-card__icon">🏡</div>
+            <div>
+              <div class="option-card__title">8–12 posti</div>
+              <div class="option-card__sub">Ville & villette</div>
+            </div>
+          </div>
+          <div class="option-card__desc">Ideali per gruppi: spazi esterni, più bagni e privacy tra camere.</div>
+        </button>
+
+        <button class="option-card" type="button" data-min="12" data-max="99" aria-pressed="false">
+          <div class="option-card__top">
+            <div class="option-card__icon">✨</div>
+            <div>
+              <div class="option-card__title">12+ posti</div>
+              <div class="option-card__sub">Gruppi grandi</div>
+            </div>
+          </div>
+          <div class="option-card__desc">Soluzioni su richiesta: più unità vicine o proprietà grandi per comitive.</div>
+        </button>
+      </div>
+
+      <p class="note">Non trovi la fascia perfetta? <a class="link-inline" href="#form">Scrivici le date</a> e ti proponiamo noi le migliori opzioni disponibili.</p>
+    </div>
+  </section>
+
+  <section id="case" class="section section--alt">
+    <div class="container">
+      <div class="section__head">
+        <h2>Le nostre case</h2>
+        <p>Selezione di alloggi ideali per vacanze estive</p>
+      </div>
+
+      <div class="filterbar" id="filterbar" aria-live="polite">
+        <div class="filterbar__left">
+          <div class="filterbar__title">Case consigliate</div>
+          <div class="filterbar__meta" id="resultsMeta">Seleziona una fascia posti oppure usa la ricerca.</div>
+        </div>
+
+        <div class="filterbar__right">
+          <label class="field field--search" aria-label="Cerca">
+            <span class="field__icon" aria-hidden="true">⌕</span>
+            <input id="searchInput" type="search" placeholder="Cerca: zona, piscina, villa…" autocomplete="off" />
+          </label>
+
+          <label class="field" aria-label="Ordina">
+            <select id="sortSelect">
+              <option value="featured">Consigliate</option>
+              <option value="guests-asc">Ospiti ↑</option>
+              <option value="guests-desc">Ospiti ↓</option>
+              <option value="zone-asc">Zona A–Z</option>
+              <option value="name-asc">Nome A–Z</option>
+            </select>
+          </label>
+
+          <button class="btn btn--ghost" type="button" id="btnShowAll" hidden>Mostra tutte</button>
+        </div>
+      </div>
+
+      <div class="cards" id="cardsGrid">
+        <!-- Nota: niente / all'inizio degli URL, così funziona bene anche aprendo index.html in locale -->
+
+        <article class="card property-card" data-name="ATENA" data-zone="Baia Verde" data-guests="9" data-href="case/atena.html">
+          <a class="card__media" href="case/atena.html" aria-label="Apri scheda ATENA">
+            <img src="img/case/atena.jpg" alt="ATENA" loading="lazy">
+          </a>
+          <div class="card__body">
+            <h3>ATENA</h3>
+            <ul class="meta">
+              <li>📍 Baia Verde</li>
+              <li>👥 9 ospiti</li>
+              <li>🛏️ 3 camere + 2 bagni</li>
+            </ul>
+            <div class="card__foot">
+              <a class="link" href="case/atena.html">Vedi dettagli →</a>
+              <a class="chip js-wa-card" href="#" data-house="ATENA" data-zone="Baia Verde" data-guests="9">Chiedi su WhatsApp</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card property-card" data-name="BAIA VERDE" data-zone="Baia Verde" data-guests="6" data-href="case/baia-verde.html">
+          <a class="card__media" href="case/baia-verde.html" aria-label="Apri scheda BAIA VERDE">
+            <img src="img/case/baia-verde.jpg" alt="BAIA VERDE" loading="lazy">
+          </a>
+          <div class="card__body">
+            <h3>BAIA VERDE</h3>
+            <ul class="meta">
+              <li>📍 Baia Verde</li>
+              <li>👥 6 ospiti</li>
+              <li>🚗 Parcheggio privato custodito</li>
+            </ul>
+            <div class="card__foot">
+              <a class="link" href="case/baia-verde.html">Vedi dettagli →</a>
+              <a class="chip js-wa-card" href="#" data-house="BAIA VERDE" data-zone="Baia Verde" data-guests="6">Chiedi su WhatsApp</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card property-card" data-name="VILLA AZZURRA" data-zone="Baia Verde" data-guests="10" data-href="case/villa-azzurra.html">
+          <a class="card__media" href="case/villa-azzurra.html" aria-label="Apri scheda VILLA AZZURRA">
+            <img src="img/case/villa-azzurra.jpg" alt="VILLA AZZURRA" loading="lazy">
+          </a>
+          <div class="card__body">
+            <h3>VILLA AZZURRA</h3>
+            <ul class="meta">
+              <li>📍 Baia Verde</li>
+              <li>👥 10 ospiti</li>
+              <li>🌿 Giardino attrezzato + terrazzo</li>
+            </ul>
+            <div class="card__foot">
+              <a class="link" href="case/villa-azzurra.html">Vedi dettagli →</a>
+              <a class="chip js-wa-card" href="#" data-house="VILLA AZZURRA" data-zone="Baia Verde" data-guests="10">Chiedi su WhatsApp</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card property-card" data-name="ZEUS" data-zone="Baia Verde" data-guests="7" data-href="case/zeus.html">
+          <a class="card__media" href="case/zeus.html" aria-label="Apri scheda ZEUS">
+            <img src="img/case/zeus.jpg" alt="ZEUS" loading="lazy">
+          </a>
+          <div class="card__body">
+            <h3>ZEUS</h3>
+            <ul class="meta">
+              <li>📍 Baia Verde</li>
+              <li>👥 7 ospiti</li>
+              <li>🚿 Doccia esterna + giardino recintato</li>
+            </ul>
+            <div class="card__foot">
+              <a class="link" href="case/zeus.html">Vedi dettagli →</a>
+              <a class="chip js-wa-card" href="#" data-house="ZEUS" data-zone="Baia Verde" data-guests="7">Chiedi su WhatsApp</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card property-card" data-name="SIRENA" data-zone="Baia Verde" data-guests="5" data-href="case/sirena.html">
+          <a class="card__media" href="case/sirena.html" aria-label="Apri scheda SIRENA">
+            <img src="img/case/sirena.jpg" alt="SIRENA" loading="lazy">
+          </a>
+          <div class="card__body">
+            <h3>SIRENA</h3>
+            <ul class="meta">
+              <li>📍 Baia Verde</li>
+              <li>👥 5 ospiti</li>
+              <li>🌿 Indipendente con giardino retrostante</li>
+            </ul>
+            <div class="card__foot">
+              <a class="link" href="case/sirena.html">Vedi dettagli →</a>
+              <a class="chip js-wa-card" href="#" data-house="SIRENA" data-zone="Baia Verde" data-guests="5">Chiedi su WhatsApp</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card property-card" data-name="ARMONIA" data-zone="Gallipoli" data-guests="5" data-href="case/armonia.html">
+          <a class="card__media" href="case/armonia.html" aria-label="Apri scheda ARMONIA">
+            <img src="img/case/armonia.jpg" alt="ARMONIA" loading="lazy">
+          </a>
+          <div class="card__body">
+            <h3>ARMONIA</h3>
+            <ul class="meta">
+              <li>📍 Gallipoli</li>
+              <li>👥 5 ospiti</li>
+              <li>🌅 Balcone vista mare</li>
+            </ul>
+            <div class="card__foot">
+              <a class="link" href="case/armonia.html">Vedi dettagli →</a>
+              <a class="chip js-wa-card" href="#" data-house="ARMONIA" data-zone="Gallipoli" data-guests="5">Chiedi su WhatsApp</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card property-card" data-name="VILLETTA GEMMA C" data-zone="Gallipoli" data-guests="4" data-href="case/villetta-gemma-c.html">
+          <a class="card__media" href="case/villetta-gemma-c.html" aria-label="Apri scheda VILLETTA GEMMA C">
+            <img src="img/case/villetta-gemma-c.jpg" alt="VILLETTA GEMMA C" loading="lazy">
+          </a>
+          <div class="card__body">
+            <h3>VILLETTA GEMMA C</h3>
+            <ul class="meta">
+              <li>📍 Gallipoli</li>
+              <li>👥 4 ospiti</li>
+              <li>🆕 Nuova costruzione + doccia esterna</li>
+            </ul>
+            <div class="card__foot">
+              <a class="link" href="case/villetta-gemma-c.html">Vedi dettagli →</a>
+              <a class="chip js-wa-card" href="#" data-house="VILLETTA GEMMA C" data-zone="Gallipoli" data-guests="4">Chiedi su WhatsApp</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card property-card" data-name="BAIACRI" data-zone="Gallipoli" data-guests="6" data-href="case/baiacri.html">
+          <a class="card__media" href="case/baiacri.html" aria-label="Apri scheda BAIACRI">
+            <img src="img/case/baiacri.jpg" alt="BAIACRI" loading="lazy">
+          </a>
+          <div class="card__body">
+            <h3>BAIACRI</h3>
+            <ul class="meta">
+              <li>📍 Gallipoli</li>
+              <li>👥 6 ospiti</li>
+              <li>🌅 Balcone vista mare (tende parasole)</li>
+            </ul>
+            <div class="card__foot">
+              <a class="link" href="case/baiacri.html">Vedi dettagli →</a>
+              <a class="chip js-wa-card" href="#" data-house="BAIACRI" data-zone="Gallipoli" data-guests="6">Chiedi su WhatsApp</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card property-card" data-name="MIRAMARE" data-zone="Gallipoli" data-guests="8" data-href="case/miramare.html">
+          <a class="card__media" href="case/miramare.html" aria-label="Apri scheda MIRAMARE">
+            <img src="img/case/miramare.jpg" alt="MIRAMARE" loading="lazy">
+          </a>
+          <div class="card__body">
+            <h3>MIRAMARE</h3>
+            <ul class="meta">
+              <li>📍 Gallipoli</li>
+              <li>👥 8 ospiti</li>
+              <li>🛁 2 bagni + 3 camere</li>
+            </ul>
+            <div class="card__foot">
+              <a class="link" href="case/miramare.html">Vedi dettagli →</a>
+              <a class="chip js-wa-card" href="#" data-house="MIRAMARE" data-zone="Gallipoli" data-guests="8">Chiedi su WhatsApp</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card property-card" data-name="LA PERLA" data-zone="Gallipoli" data-guests="10" data-href="case/la-perla.html">
+          <a class="card__media" href="case/la-perla.html" aria-label="Apri scheda LA PERLA">
+            <img src="img/case/la-perla.jpg" alt="LA PERLA" loading="lazy">
+          </a>
+          <div class="card__body">
+            <h3>LA PERLA</h3>
+            <ul class="meta">
+              <li>📍 Gallipoli</li>
+              <li>👥 10 ospiti</li>
+              <li>❄️ Clima in ogni ambiente</li>
+            </ul>
+            <div class="card__foot">
+              <a class="link" href="case/la-perla.html">Vedi dettagli →</a>
+              <a class="chip js-wa-card" href="#" data-house="LA PERLA" data-zone="Gallipoli" data-guests="10">Chiedi su WhatsApp</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card property-card" data-name="MONDONUOVO" data-zone="Gallipoli" data-guests="7" data-href="case/mondonuovo.html">
+          <a class="card__media" href="case/mondonuovo.html" aria-label="Apri scheda MONDONUOVO">
+            <img src="img/case/mondonuovo.jpg" alt="MONDONUOVO" loading="lazy">
+          </a>
+          <div class="card__body">
+            <h3>MONDONUOVO</h3>
+            <ul class="meta">
+              <li>📍 Gallipoli</li>
+              <li>👥 7 ospiti</li>
+              <li>🏊 Piscina nel residence</li>
+            </ul>
+            <div class="card__foot">
+              <a class="link" href="case/mondonuovo.html">Vedi dettagli →</a>
+              <a class="chip js-wa-card" href="#" data-house="MONDONUOVO" data-zone="Gallipoli" data-guests="7">Chiedi su WhatsApp</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <noscript>
+        <p class="note">Nota: senza JavaScript i filtri non funzionano, ma puoi comunque aprire le schede delle case e contattarci.</p>
+      </noscript>
+    </div>
+  </section>
+
+  <section id="form" class="section">
+    <div class="container form__grid">
+      <div>
+        <h2>Richiedi disponibilità</h2>
+        <div class="bullets">
+          <div class="bullet"><span>✔</span> Nessuna prenotazione online</div>
+          <div class="bullet"><span>✔</span> Risposta rapida su WhatsApp</div>
+          <div class="bullet"><span>✔</span> Offerta personalizzata</div>
+        </div>
+      </div>
+
+      <form class="form" id="requestForm">
+        <label>Check-in
+          <input type="date" name="checkin" required>
+        </label>
+        <label>Check-out
+          <input type="date" name="checkout" required>
+        </label>
+        <label>Numero ospiti
+          <input type="number" name="guests" min="1" required>
+        </label>
+        <label>Budget indicativo
+          <input type="text" name="budget" placeholder="Facoltativo">
+        </label>
+        <label>Note
+          <textarea name="notes" rows="4" placeholder="Zona preferita, richieste, orari…"></textarea>
+        </label>
+        <button class="btn btn--primary btn--full" type="submit">Invia su WhatsApp</button>
+        <p class="fineprint">Riceverai risposta diretta senza intermediari</p>
+      </form>
+    </div>
+  </section>
+</main>
+
 <footer class="footer">
   <div class="container footer__inner">
     <span class="muted">© <span id="year"></span> Salento Stay</span>
     <div class="footer__links">
-      <a href="/privacy.html">Privacy</a>
-      <a href="#form">Contatti</a>
+      <a href="privacy.html">Privacy</a>
+      <a id="waFooter" href="#">Contatti</a>
     </div>
   </div>
 </footer>
 
+<a class="wa-fab" id="waFab" href="#" aria-label="Scrivici su WhatsApp">
+  <span class="wa-fab__dot" aria-hidden="true"></span>
+  WhatsApp
+</a>
+
 <script src="script.js"></script>
-  <script src="/filter.js"></script>
 </body>
 </html>

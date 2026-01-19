@@ -186,39 +186,7 @@
         </div>
       </div>
 
-      
-<!-- LITE_CLEAN_A_V2:MINIFILTERS -->
-<div class="miniFilters" id="miniFilters">
-  <div class="miniFilters__row">
-    <div class="miniFilters__group">
-      <div class="miniFilters__label">Ospiti</div>
-      <div class="chips" id="mfGuests">
-        <button class="chip is-active" type="button" data-guest="all">Tutti</button>
-        <button class="chip" type="button" data-guest="2-4">2–4</button>
-        <button class="chip" type="button" data-guest="4-8">4–8</button>
-        <button class="chip" type="button" data-guest="8-12">8–12</button>
-        <button class="chip" type="button" data-guest="12+">12+</button>
-      </div>
-    </div>
-
-    <div class="miniFilters__group">
-      <div class="miniFilters__label">Zona</div>
-      <div class="chips" id="mfZones">
-        <button class="chip is-active" type="button" data-zone="all">Tutte</button>
-      </div>
-    </div>
-
-    <div class="miniFilters__group miniFilters__tools">
-      <button class="btn btn--ghost" id="mfReset" type="button">Reset</button>
-    </div>
-  </div>
-
-  <div class="miniFilters__meta">
-    <span id="mfCount" class="results">Mostro tutte le case</span>
-  </div>
-</div>
-
-<div class="cards" id="cardsGrid">
+      <div class="cards" id="cardsGrid">
         <!-- Nota: niente / all'inizio degli URL, così funziona bene anche aprendo index.html in locale -->
 
         <article class="card property-card" data-name="ATENA" data-zone="Baia Verde" data-guests="9" data-href="case/atena.html">
